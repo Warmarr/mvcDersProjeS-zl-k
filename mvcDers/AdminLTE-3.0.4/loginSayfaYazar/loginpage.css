@@ -1,0 +1,145 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background:url('https://i.kayseriolay.com/c/80/1280x720/s/dosya/haber/kapali-kale-anitkabir-i-ziyaret-etti.jpg')no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.login-g{
+    background: #fff;
+    width: 300px;
+    height: 535px;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(254, 190, 16);
+    border-radius: 20px;
+    padding: 20px 20px;
+}
+.login-g .logo img{
+    display: flex;
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+    position: absolute;
+    left: calc(50% - 20px);
+}
+.login-g .LoginCon h2{
+    color: #febe10;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 45px;
+
+}
+.login-g .input-box{
+    width: 100%;
+    height: 50px;
+    margin: 35px 0;
+}
+.input-box input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(254,190,16);
+    background: transparent;
+    border-radius: 35px;
+    font-size: 15px;
+    padding: 20px 20px 20px;
+    color:#ae1022;
+   
+}
+input::placeholder{
+    color: #ae1022;
+    transition: 0.5s;
+
+}
+.login-g .input-box input:focus::placeholder{
+    color: #febe10;
+    font-size: 10px;
+    transform: translateY(-15px);
+}
+.login-g .forgot-password{
+    display: flex;
+    justify-content: space-between;
+    margin: -15px 0 15px;
+    color:#ae1022;
+    font-size: 14.5px;
+}
+.forgot-password label input{
+    accent-color: #ae1022;
+    margin-right: 2px;
+}
+.forgot-password a{
+    color:#ae1022;
+    text-decoration: none;
+}
+.forgot-password a:hover{
+    text-decoration: underline;
+}
+.login-g .btnLogin{
+    width: 100%;
+    height: 50px;
+    background: #febe10;
+    border:none;
+    outline: none;
+    border: 2px solid rgb(174, 16, 34);
+    border-radius: 35px;
+    color:#ae1022;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600;
+    margin: auto;
+}
+.btnLogin:active{
+    opacity: 0.8;
+}
+.twitter a,
+.facebook a{
+    display: block;
+    width: 100%;
+    height: 50px;
+    border:none;
+    border-radius: 60px;
+    outline: none;
+    color:#fff;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600px;
+    line-height: 50px;
+    padding-left: 20px;
+    text-decoration: none;
+}
+.twitter{
+    background-color: #00acee;
+    margin: 15px 0 15px 0;
+    border-radius: 60px;
+
+
+}
+.facebook{
+    background-color: #1877F2;
+    margin: 15px 0 15px 0;
+    border-radius: 60px;
+}
+.twitter a:hover{
+    background-color: #00b7ff;
+}
+.facebook a:hover{
+    background-color: #1d7fff;
+}
+
+.twitter i,
+.facebook i{
+    font-size: 16px;
+    padding-right: 20px;
+}

@@ -1,0 +1,45 @@
+﻿@using EntityLayer.Concrete
+@model List<Admin>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@{ string durumButon = "";}
+@{ string durumAdı = "";}
+@{ string durumBtnAd = "";}
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Kullanıcı Mail</th>
+        <th>Yetki</th>
+        <th>Status</th>
+        <th>Pasif Yap</th>
+        <th>Yetki Değiştir</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        if (item.AdminStatus == true)
+        {
+            durumButon = "btn btn-danger";
+            durumBtnAd = "Pasif Yap";
+            durumAdı = "AKTİF";
+        }
+        else
+        {
+            durumButon = "btn btn-success";
+            durumBtnAd = "Aktif Yap";
+            durumAdı = "PASİF";
+        }
+        <tr>
+            <td>@item.AdminID</td>
+            <td>@item.AdminUserName</td>
+            <td>@item.Role.RoleName</td>
+            <td>@durumAdı</td>
+            <td><a href="/Authorization/DeleteAdmin/@item.AdminID" class="@durumButon">@durumBtnAd</a></td>
+            <td><a href="/Authorization/AdminRoleEdit/@item.AdminID" class="btn btn-warning">Yetki Değiştir</a></td>
+        </tr>
+    }
+</table>
+<br />
+<a href="/Authorization/AdminAdd" class="btn btn-success">Yeni Admin Tanımlar</a>

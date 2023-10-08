@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1EDF2D09-358E-41B0-AA02-6C36CEDC1BB9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataAccessLayer</RootNamespace>
+    <AssemblyName>DataAccessLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\IAboutDal.cs" />
+    <Compile Include="Abstract\IAdminDal.cs" />
+    <Compile Include="Abstract\ICategoryDal.cs" />
+    <Compile Include="Abstract\IContactDal.cs" />
+    <Compile Include="Abstract\IContentDal.cs" />
+    <Compile Include="Abstract\IHeadingDal.cs" />
+    <Compile Include="Abstract\IImageFileDal.cs" />
+    <Compile Include="Abstract\IMessageDal.cs" />
+    <Compile Include="Abstract\IRepository.cs" />
+    <Compile Include="Abstract\IRoleDal.cs" />
+    <Compile Include="Abstract\IWriterDal.cs" />
+    <Compile Include="Concrete\Context.cs" />
+    <Compile Include="Concrete\Repositories\GenericRepositories.cs" />
+    <Compile Include="EntityFramework\EFAboutDal.cs" />
+    <Compile Include="EntityFramework\EFAdminDal.cs" />
+    <Compile Include="EntityFramework\EFAdminLogin.cs" />
+    <Compile Include="EntityFramework\EFCategoryDal.cs" />
+    <Compile Include="EntityFramework\EFContactDal.cs" />
+    <Compile Include="EntityFramework\EFContentDal.cs" />
+    <Compile Include="EntityFramework\EFHeadingDal.cs" />
+    <Compile Include="EntityFramework\EFImageFileDal.cs" />
+    <Compile Include="EntityFramework\EFMessageDal.cs" />
+    <Compile Include="EntityFramework\EFRoleDal.cs" />
+    <Compile Include="EntityFramework\EFWriterDal.cs" />
+    <Compile Include="Migrations\202303291055126_mag1.cs" />
+    <Compile Include="Migrations\202303291055126_mag1.designer.cs">
+      <DependentUpon>202303291055126_mag1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303291250107_mag2.cs" />
+    <Compile Include="Migrations\202303291250107_mag2.designer.cs">
+      <DependentUpon>202303291250107_mag2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307111122145_mig_writer_edit.cs" />
+    <Compile Include="Migrations\202307111122145_mig_writer_edit.designer.cs">
+      <DependentUpon>202307111122145_mig_writer_edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307111355482_mig_writertitle_add.cs" />
+    <Compile Include="Migrations\202307111355482_mig_writertitle_add.designer.cs">
+      <DependentUpon>202307111355482_mig_writertitle_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307141612031_mig_imagesizechange.cs" />
+    <Compile Include="Migrations\202307141612031_mig_imagesizechange.designer.cs">
+      <DependentUpon>202307141612031_mig_imagesizechange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307141707461_m.cs" />
+    <Compile Include="Migrations\202307141707461_m.designer.cs">
+      <DependentUpon>202307141707461_m.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307272340306_mig_content_status1.cs" />
+    <Compile Include="Migrations\202307272340306_mig_content_status1.designer.cs">
+      <DependentUpon>202307272340306_mig_content_status1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307272346267_mig_heading_statusadd.cs" />
+    <Compile Include="Migrations\202307272346267_mig_heading_statusadd.designer.cs">
+      <DependentUpon>202307272346267_mig_heading_statusadd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202308032212593_mig_add_message.cs" />
+    <Compile Include="Migrations\202308032212593_mig_add_message.designer.cs">
+      <DependentUpon>202308032212593_mig_add_message.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202308041622027_mig_contact_addDate.cs" />
+    <Compile Include="Migrations\202308041622027_mig_contact_addDate.designer.cs">
+      <DependentUpon>202308041622027_mig_contact_addDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202308081826283_mig_addimage_file.cs" />
+    <Compile Include="Migrations\202308081826283_mig_addimage_file.designer.cs">
+      <DependentUpon>202308081826283_mig_addimage_file.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202308081905048_mig_admin_table.cs" />
+    <Compile Include="Migrations\202308081905048_mig_admin_table.designer.cs">
+      <DependentUpon>202308081905048_mig_admin_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309212033493_messageısreadmig_1.cs" />
+    <Compile Include="Migrations\202309212033493_messageısreadmig_1.designer.cs">
+      <DependentUpon>202309212033493_messageısreadmig_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309261623454_admin_guncelleme-mig1.cs" />
+    <Compile Include="Migrations\202309261623454_admin_guncelleme-mig1.designer.cs">
+      <DependentUpon>202309261623454_admin_guncelleme-mig1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309261631406_admin_guncelleme_mig2.cs" />
+    <Compile Include="Migrations\202309261631406_admin_guncelleme_mig2.designer.cs">
+      <DependentUpon>202309261631406_admin_guncelleme_mig2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310031632412_admin_update_mig1.cs" />
+    <Compile Include="Migrations\202310031632412_admin_update_mig1.designer.cs">
+      <DependentUpon>202310031632412_admin_update_mig1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310082128307_admin_statu_adding_mig1.cs" />
+    <Compile Include="Migrations\202310082128307_admin_statu_adding_mig1.designer.cs">
+      <DependentUpon>202310082128307_admin_statu_adding_mig1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310082130384_admin_statu_update_mig1.cs" />
+    <Compile Include="Migrations\202310082130384_admin_statu_update_mig1.designer.cs">
+      <DependentUpon>202310082130384_admin_statu_update_mig1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310082203268_adding_adminrole_mig1.cs" />
+    <Compile Include="Migrations\202310082203268_adding_adminrole_mig1.designer.cs">
+      <DependentUpon>202310082203268_adding_adminrole_mig1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310082207280_admin_guncelleme_mig1.cs" />
+    <Compile Include="Migrations\202310082207280_admin_guncelleme_mig1.designer.cs">
+      <DependentUpon>202310082207280_admin_guncelleme_mig1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310082210328_admin_gncelleme_mig.cs" />
+    <Compile Include="Migrations\202310082210328_admin_gncelleme_mig.designer.cs">
+      <DependentUpon>202310082210328_admin_gncelleme_mig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310082213235_adding_adminguncel_mig.cs" />
+    <Compile Include="Migrations\202310082213235_adding_adminguncel_mig.designer.cs">
+      <DependentUpon>202310082213235_adding_adminguncel_mig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310082214562_adding_admingncllme_mig.cs" />
+    <Compile Include="Migrations\202310082214562_adding_admingncllme_mig.designer.cs">
+      <DependentUpon>202310082214562_adding_admingncllme_mig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310082224201_adding_adminrole_mig11.cs" />
+    <Compile Include="Migrations\202310082224201_adding_adminrole_mig11.designer.cs">
+      <DependentUpon>202310082224201_adding_adminrole_mig11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202310082256117_add_adminrole1_mig2.cs" />
+    <Compile Include="Migrations\202310082256117_add_adminrole1_mig2.designer.cs">
+      <DependentUpon>202310082256117_add_adminrole1_mig2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EntityLayer\EntityLayer.csproj">
+      <Project>{d5b6c7ff-e2cf-4a68-899d-9460147b412a}</Project>
+      <Name>EntityLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202303291055126_mag1.resx">
+      <DependentUpon>202303291055126_mag1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303291250107_mag2.resx">
+      <DependentUpon>202303291250107_mag2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307111122145_mig_writer_edit.resx">
+      <DependentUpon>202307111122145_mig_writer_edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307111355482_mig_writertitle_add.resx">
+      <DependentUpon>202307111355482_mig_writertitle_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307141612031_mig_imagesizechange.resx">
+      <DependentUpon>202307141612031_mig_imagesizechange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307141707461_m.resx">
+      <DependentUpon>202307141707461_m.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307272340306_mig_content_status1.resx">
+      <DependentUpon>202307272340306_mig_content_status1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307272346267_mig_heading_statusadd.resx">
+      <DependentUpon>202307272346267_mig_heading_statusadd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308032212593_mig_add_message.resx">
+      <DependentUpon>202308032212593_mig_add_message.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308041622027_mig_contact_addDate.resx">
+      <DependentUpon>202308041622027_mig_contact_addDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308081826283_mig_addimage_file.resx">
+      <DependentUpon>202308081826283_mig_addimage_file.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202308081905048_mig_admin_table.resx">
+      <DependentUpon>202308081905048_mig_admin_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309212033493_messageısreadmig_1.resx">
+      <DependentUpon>202309212033493_messageısreadmig_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309261623454_admin_guncelleme-mig1.resx">
+      <DependentUpon>202309261623454_admin_guncelleme-mig1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309261631406_admin_guncelleme_mig2.resx">
+      <DependentUpon>202309261631406_admin_guncelleme_mig2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310031632412_admin_update_mig1.resx">
+      <DependentUpon>202310031632412_admin_update_mig1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310082128307_admin_statu_adding_mig1.resx">
+      <DependentUpon>202310082128307_admin_statu_adding_mig1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310082130384_admin_statu_update_mig1.resx">
+      <DependentUpon>202310082130384_admin_statu_update_mig1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310082203268_adding_adminrole_mig1.resx">
+      <DependentUpon>202310082203268_adding_adminrole_mig1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310082207280_admin_guncelleme_mig1.resx">
+      <DependentUpon>202310082207280_admin_guncelleme_mig1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310082210328_admin_gncelleme_mig.resx">
+      <DependentUpon>202310082210328_admin_gncelleme_mig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310082213235_adding_adminguncel_mig.resx">
+      <DependentUpon>202310082213235_adding_adminguncel_mig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310082214562_adding_admingncllme_mig.resx">
+      <DependentUpon>202310082214562_adding_admingncllme_mig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310082224201_adding_adminrole_mig11.resx">
+      <DependentUpon>202310082224201_adding_adminrole_mig11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202310082256117_add_adminrole1_mig2.resx">
+      <DependentUpon>202310082256117_add_adminrole1_mig2.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+</Project>

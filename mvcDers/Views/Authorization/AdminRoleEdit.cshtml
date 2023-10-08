@@ -1,0 +1,25 @@
+﻿@model EntityLayer.Concrete.Admin
+@{
+    ViewBag.Title = "AdminRoleEdit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Kategori Güncelleme</h2>
+@using (Html.BeginForm("AdminRoleEdit", "Authorization", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.HiddenFor(x => x.AdminID)
+        @Html.HiddenFor(x => x.AdminPassword)
+        @Html.HiddenFor(x => x.AdminUserName)
+
+        @Html.HiddenFor(x => x.AdminStatus)
+        @Html.HiddenFor(x => x.AdminID)
+        @Html.TextBoxFor(x=>x.AdminUserName)
+        <br />
+        <br />
+        @Html.Label("Admin Rol")
+        @Html.DropDownListFor(x => x.RoleId, (List<SelectListItem>)ViewBag.role, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-success">Güncelle</button>
+    </div>
+}
